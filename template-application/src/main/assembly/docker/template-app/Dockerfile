@@ -4,9 +4,9 @@ RUN yum install openssh-server -y
 RUN yum install wget -y
 RUN yum install vim -y
 RUN mkdir -p /data
-ADD compose-customer-application-*.jar /data/compose-customer-application.jar
-ADD customer.yml /data/customer.yml
+ADD template-application-*.jar /data/template-application.jar
+ADD template.yml /data/template.yml
 EXPOSE 8080
 EXPOSE 8081
 
-CMD java -jar /data/compose-customer-application.jar server /data/customer.yml
+CMD java -jar /data/template-application.jar server /data/template.yml
