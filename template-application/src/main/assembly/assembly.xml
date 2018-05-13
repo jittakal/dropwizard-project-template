@@ -1,0 +1,36 @@
+<assembly>
+    <id>dist</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+
+    <fileSets>
+        <!--fileSet>
+            <directory>src/main/assembly/scripts</directory>
+            <outputDirectory></outputDirectory>
+            <fileMode>0755</fileMode>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet-->
+
+        <fileSet>
+            <directory>src/main/assembly/docker</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>target</directory>
+            <outputDirectory>template-api</outputDirectory>
+            <includes>
+                <include>template*.jar</include>
+            </includes>
+            <excludes>
+                <exclude>*-tests.jar</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+</assembly>
